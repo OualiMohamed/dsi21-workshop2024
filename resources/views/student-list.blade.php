@@ -15,6 +15,28 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>Student list</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>NCIN</th>
+                            <th>Name</th>
+                            <th>E-mail</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($students as $student)
+                            <tr>
+                                <td>{{ $student->ncin }}</td>
+                                <td>{{ $student->name }}</td>
+                                <td>{{ $student->email }}</td>
+                                <td>{{ $student->phone }}</td>
+                                <td>{{ $student->address }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
