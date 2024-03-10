@@ -7,12 +7,18 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $students = Student::get();
         return view('student-list', compact('students'));
     }
 
-    public function addStudent() {
+    public function addStudent()
+    {
         return view('add-student');
+    }
+    public function saveStudent(Request $request)
+    {
+        dd($request->all());
     }
 }
