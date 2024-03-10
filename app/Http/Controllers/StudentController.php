@@ -19,6 +19,21 @@ class StudentController extends Controller
     }
     public function saveStudent(Request $request)
     {
-        dd($request->all());
+        $ncin = $request->ncin;
+        $name = $request->name;
+        $email = $request->email;
+        $phone = $request->phone;
+        $address = $request->address;
+
+        $newStudent = new Student();
+        $newStudent->ncin = $ncin;
+        $newStudent->name = $name;
+        $newStudent->email = $email;
+        $newStudent->phone = $phone;
+        $newStudent->address = $address;
+
+        $newStudent->save();
+
+        return redirect()->back();
     }
 }
