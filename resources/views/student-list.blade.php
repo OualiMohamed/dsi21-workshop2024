@@ -8,6 +8,7 @@
     <title>Student List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -15,6 +16,9 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>Student list</h2>
+                <div class="py-4">
+                    <a class="btn btn-primary" href="#"><i class="bi bi-plus-square"></i> Add student</a>
+                </div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -23,6 +27,7 @@
                             <th>E-mail</th>
                             <th>Phone</th>
                             <th>Address</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,6 +38,7 @@
                                 <td>{{ $student->email }}</td>
                                 <td>{{ $student->phone }}</td>
                                 <td>{{ $student->address }}</td>
+                                <td><i class="bi bi-pencil-square text-success"> <i class="bi bi-trash text-danger"></i></td>
                             </tr>
                         @endforeach
                     </tbody>
