@@ -24,3 +24,5 @@ Route::post('/save-student', [StudentController::class, 'saveStudent']);
 
 Route::get('/edit-student/{id}', [StudentController::class, 'editStudent']);
 Route::post('/update-student/{id}', [StudentController::class, 'updateStudent']);
+
+Route::get('/delete-student/{id}', [StudentController::class, 'deleteStudent']);

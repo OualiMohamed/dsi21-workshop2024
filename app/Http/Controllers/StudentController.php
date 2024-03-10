@@ -80,4 +80,12 @@ class StudentController extends Controller
 
         return redirect()->back()->with('success', 'Student Updated Successfully');
     }
+
+    public function deleteStudent($id)
+    {
+        $student = Student::find($id);
+        $student->delete();
+
+        return redirect()->back()->with('success', 'Student Deleted Successfully');
+    }
 }

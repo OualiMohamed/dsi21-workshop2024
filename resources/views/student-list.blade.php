@@ -16,6 +16,11 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>Student list</h2>
+                @if (Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
                 <div class="py-4">
                     <a class="btn btn-primary" href="{{ url('add-student')}}"><i class="bi bi-plus-square"></i> Add student</a>
                 </div>
@@ -40,7 +45,7 @@
                                 <td>{{ $student->address }}</td>
                                 <td>
                                     <a onclick="return confirm('modifier?')" href="{{ url('edit-student/'.$student->id) }}"><i class="bi bi-pencil-square text-success"></i></a> 
-                                    <i class="bi bi-trash text-danger"></i>
+                                    <a onclick="return confirm('supprimer?')" href="{{ url('delete-student/'.$student->id) }}"><i class="bi bi-trash text-danger"></i></a>
                                 </td>
                             </tr>
                         @endforeach
