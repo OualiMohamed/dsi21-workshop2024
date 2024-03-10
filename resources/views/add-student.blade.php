@@ -16,23 +16,32 @@
         <div class="row">
             <div class="col-md-12">
                 <h2>Add Student</h2>
+                @if (Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
                 <form action="{{ url('save-student') }}" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="ncin" class="form-label">NCIN</label>
-                        <input type="text" class="form-control" name="ncin" id="ncin" placeholder="Enter NCIN">
+                        <input type="text" class="form-control" name="ncin" id="ncin"
+                            placeholder="Enter NCIN">
                     </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
+                        <input type="text" class="form-control" name="name" id="name"
+                            placeholder="Enter Name">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">E-mail</label>
-                        <input type="text" class="form-control" name="email" id="email" placeholder="Enter email">
+                        <input type="text" class="form-control" name="email" id="email"
+                            placeholder="Enter email">
                     </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone">
+                        <input type="text" class="form-control" name="phone" id="phone"
+                            placeholder="Enter phone">
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Address</label>
@@ -40,7 +49,7 @@
                     </div>
                     <div>
                         <button type="submit" class="btn btn-primary">Save</button>
-                        <a href="{{ url('student-list' )}}" class="btn btn-danger">Back</a>
+                        <a href="{{ url('student-list') }}" class="btn btn-danger">Back</a>
                     </div>
                 </form>
             </div>

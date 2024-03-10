@@ -34,6 +34,6 @@ class StudentController extends Controller
 
         $newStudent->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Student Added Successfully');
     }
 }
