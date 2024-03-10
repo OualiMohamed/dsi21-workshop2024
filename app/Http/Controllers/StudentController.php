@@ -45,4 +45,39 @@ class StudentController extends Controller
 
         return redirect()->back()->with('success', 'Student Added Successfully');
     }
+
+    public function editStudent($id)
+    {
+        $student = Student::find($id);
+        return view('edit-student', compact('student'));
+    }
+
+    public function updateStudent(Request $request, $id)
+    {
+        // Request validation
+        $request->validate([
+            'ncin' => 'required',
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'address' => 'required',
+        ]);
+
+        $ncin = $request->ncin;
+        $name = $request->name;
+        $email = $request->email;
+        $phone = $request->phone;
+        $address = $request->address;
+
+        $student = Student::find($id);
+        $student->ncin = $ncin;
+        $student->name = $name;
+        $student->email = $email;
+        $student->phone = $phone;
+        $student->address = $address;
+
+        $student->save();
+
+        return redirect()->back()->with('success', 'Student Updated Successfully');
+    }
 }

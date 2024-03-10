@@ -38,7 +38,10 @@
                                 <td>{{ $student->email }}</td>
                                 <td>{{ $student->phone }}</td>
                                 <td>{{ $student->address }}</td>
-                                <td><i class="bi bi-pencil-square text-success"> <i class="bi bi-trash text-danger"></i></td>
+                                <td>
+                                    <a onclick="return confirm('modifier?')" href="{{ url('edit-student/'.$student->id) }}"><i class="bi bi-pencil-square text-success"></i></a> 
+                                    <i class="bi bi-trash text-danger"></i>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
