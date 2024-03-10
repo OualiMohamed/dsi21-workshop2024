@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <h2>Student list</h2>
                 <div class="py-4">
-                    <a class="btn btn-primary" href="#"><i class="bi bi-plus-square"></i> Add student</a>
+                    <a class="btn btn-primary" href="{{ url('add-student')}}"><i class="bi bi-plus-square"></i> Add student</a>
                 </div>
                 <table class="table">
                     <thead>

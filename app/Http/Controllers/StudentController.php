@@ -11,4 +11,8 @@ class StudentController extends Controller
         $students = Student::get();
         return view('student-list', compact('students'));
     }
+
+    public function addStudent() {
+        return view('add-student');
+    }
 }
