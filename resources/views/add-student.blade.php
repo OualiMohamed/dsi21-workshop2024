@@ -25,27 +25,52 @@
                     @csrf
                     <div class="mb-3">
                         <label for="ncin" class="form-label">NCIN</label>
-                        <input type="text" class="form-control" name="ncin" id="ncin"
-                            placeholder="Enter NCIN">
+                        <input type="text" class="form-control" value="{{ old('ncin') }}" name="ncin"
+                            id="ncin" placeholder="Enter NCIN">
+                        @error('ncin')
+                            <div class="alert alert-danger" role="alert">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" name="name" id="name"
-                            placeholder="Enter Name">
+                        <input type="text" class="form-control" value="{{ old('name') }}" name="name"
+                            id="name" placeholder="Enter Name">
+                        @error('name')
+                            <div class="alert alert-danger" role="alert">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">E-mail</label>
-                        <input type="text" class="form-control" name="email" id="email"
-                            placeholder="Enter email">
+                        <input type="text" class="form-control" value="{{ old('email') }}" name="email"
+                            id="email" placeholder="Enter email">
+                        @error('email')
+                            <div class="alert alert-danger" role="alert">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" name="phone" id="phone"
-                            placeholder="Enter phone">
+                        <input type="text" class="form-control" value="{{ old('phone') }}" name="phone"
+                            id="phone" placeholder="Enter phone">
+                        @error('phone')
+                            <div class="alert alert-danger" role="alert">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Address</label>
-                        <textarea class="form-control" name="address" id="Address" rows="3" placeholder="Enter address"></textarea>
+                        <textarea class="form-control" name="address" id="Address" rows="3" placeholder="Enter address">{{ old('address') }}</textarea>
+                        @error('address')
+                            <div class="alert alert-danger" role="alert">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div>
                         <button type="submit" class="btn btn-primary">Save</button>

@@ -19,6 +19,15 @@ class StudentController extends Controller
     }
     public function saveStudent(Request $request)
     {
+        // Request validation
+        $request->validate([
+            'ncin' => 'required',
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'address' => 'required',
+        ]);
+
         $ncin = $request->ncin;
         $name = $request->name;
         $email = $request->email;
